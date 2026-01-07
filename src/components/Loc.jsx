@@ -1,11 +1,22 @@
-export default function Loc() {
+export default function Loc({ data }) {
   return (
-    <section className="w-full h-96 relative bg-slate-900 border-t border-white/10">
-      <div className="absolute top-4 left-4 z-10 bg-slate-900/90 backdrop-blur-md px-6 py-4 rounded-sm shadow-2xl border-l-4 border-amber-500">
-        <p className="text-[10px] font-bold text-amber-500 uppercase tracking-widest mb-1">
+    <section
+      style={{
+        "--bg": data.colors.bg,
+        "--primary": data.colors.primary,
+        "--secondary": data.colors.secondary,
+        "--text": data.colors.text,
+        "--third": data.colors.third,
+      }}
+      className="w-full h-96 relative bg-[var(--bg)] border-t border-white/10"
+    >
+      <div className="absolute top-4 left-4 z-10 bg-[var(--bg)] backdrop-blur-md px-6 py-4 rounded-sm shadow-2xl border-l-4 border-[var(--primary)]">
+        <p className="text-[10px] font-bold text-[var(--primary)] uppercase tracking-widest mb-1">
           Nossa Sede
         </p>
-        <p className="text-sm font-bold text-white">Av. Boa Viagem, 1000</p>
+        <p className="text-sm font-bold text-[var(--third)]">
+          Av. Boa Viagem, 1000
+        </p>
       </div>
 
       <iframe
