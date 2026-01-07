@@ -14,7 +14,7 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               alt="Reunião"
-              className="relative z-10 rounded-sm shadow-2xl object-cover h-[500px] w-full grayscale contrast-125 group-hover:grayscale-0 transition-all duration-1000 border border-white/10"
+              className="relative z-10 rounded-sm shadow-2xl object-cover h-[500px] w-full contrast-125 transition-all duration-1000 border border-white/10"
             />
             <div className="absolute -bottom-8 -right-8 bg-slate-900/90 backdrop-blur-xl p-8 rounded-sm shadow-2xl z-20 max-w-xs border-l-4 border-amber-500 hidden lg:block">
               <p className="text-white font-serif italic text-lg leading-relaxed">
