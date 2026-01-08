@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Loc from "./components/Loc";
 import Footer from "./components/Footer";
 import { FaWhatsapp } from "react-icons/fa";
+import { ScrollReveal, Appear } from "./components/Motion";
 
 const LawFirmWebsite = () => {
   const data = {
@@ -47,21 +48,37 @@ const LawFirmWebsite = () => {
         <div className="absolute bottom-[10%] right-[-5%] w-[600px] h-[600px] bg-amber-800/10 rounded-full blur-[100px] opacity-30"></div>
         <div className="absolute top-[40%] left-[20%] w-[300px] h-[300px] bg-slate-800/40 rounded-full blur-[80px]"></div>
       </div>
-      <a href={whatsappLink} target="_blank">
-        <div className="fixed bottom-16 right-16 z-50 flex items-center justify-center">
-          <FaWhatsapp className="z-10 absolute w-12 h-12 text-green-500 mx-auto" />
-          <div className="z-0 absolute bg-green-400 rounded-full w-10 h-10 animate-ping"></div>
-        </div>
-      </a>
+      <Appear className={`fixed bottom-16 right-16 z-50`}>
+        <a className="" href={whatsappLink} target="_blank">
+          <div className="flex items-center justify-center">
+            <FaWhatsapp className="z-10 absolute w-12 h-12 text-green-500" />
+            <div className="z-0 absolute bg-green-400 rounded-full w-10 h-10 animate-ping"></div>
+          </div>
+        </a>
+      </Appear>
 
       <Nav data={data} wppLink={whatsappLink} />
-      <Hero data={data} wppLink={whatsappLink} />
-      <Metrics data={data} wppLink={whatsappLink} />
-      <Areas data={data} wppLink={whatsappLink} />
-      <About data={data} wppLink={whatsappLink} />
-      <Faqs data={data} wppLink={whatsappLink} />
-      <Contact data={data} wppLink={whatsappLink} />
-      <Loc data={data} wppLink={whatsappLink} />
+      <ScrollReveal>
+        <Hero data={data} wppLink={whatsappLink} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Metrics data={data} wppLink={whatsappLink} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Areas data={data} wppLink={whatsappLink} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <About data={data} wppLink={whatsappLink} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Faqs data={data} wppLink={whatsappLink} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Contact data={data} wppLink={whatsappLink} />
+      </ScrollReveal>
+      <ScrollReveal>
+        <Loc data={data} wppLink={whatsappLink} />
+      </ScrollReveal>
       <Footer data={data} wppLink={whatsappLink} />
     </div>
   );
