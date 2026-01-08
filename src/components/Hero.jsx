@@ -1,6 +1,6 @@
 import { Shield, ArrowRight } from "lucide-react";
 
-export default function Hero({ data }) {
+export default function Hero({ data, wppLink }) {
   return (
     <section
       id="início"
@@ -38,7 +38,8 @@ export default function Hero({ data }) {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
-                href="#contato"
+                href={wppLink}
+                target="_blank"
                 className="flex items-center justify-center gap-2 bg-[var(--primary)] text-[var(--bg)] px-8 py-4 rounded-sm font-bold hover:bg-[var(--secondary)] transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.2)] hover:scale-[1.03]"
               >
                 Falar com Advogado <ArrowRight className="w-4 h-4" />

@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 
-export default function Contact({ data }) {
+export default function Contact({ data, wppLink }) {
   const [formData, setFormData] = useState({
     nome: "",
     area: "",
@@ -31,7 +31,7 @@ export default function Contact({ data }) {
     Fico no aguardo do retorno Obrigado!
     `;
 
-    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/55${phone}?text=${encodeURIComponent(
       message
     )}`;
 
@@ -71,9 +71,13 @@ export default function Contact({ data }) {
                   <p className="text-xs text-[var(--primary)] uppercase tracking-widest font-bold">
                     Contato Rápido
                   </p>
-                  <p className="text-2xl font-bold text-[var(--third)]">
+                  <a
+                    href={wppLink}
+                    target="_blank"
+                    className="text-2xl font-bold text-[var(--third)]"
+                  >
                     (81) 99999-9999
-                  </p>
+                  </a>
                 </div>
               </div>
 

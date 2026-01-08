@@ -1,5 +1,34 @@
 import { Scale } from "lucide-react";
-export default function Footer({ data }) {
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaFacebook,
+  FaWhatsapp,
+} from "react-icons/fa";
+
+export default function Footer({ data, wppLink }) {
+  const socialIcons = [
+    {
+      id: "ig",
+      icon: <FaInstagram className="w-6 h-6" />,
+      link: `https://www.instagram.com/${data.instagram}`,
+    },
+    {
+      id: "ig",
+      icon: <FaLinkedin className="w-6 h-6" />,
+      link: `https://www.linkedin.com/in/${data.linkedin}`,
+    },
+    {
+      id: "ig",
+      icon: <FaFacebook className="w-6 h-6" />,
+      link: `https://www.facebook.com/${data.facebook}`,
+    },
+    {
+      id: "ig",
+      icon: <FaWhatsapp className="w-6 h-6" />,
+      link: wppLink,
+    },
+  ];
   return (
     <footer
       style={{
@@ -12,7 +41,7 @@ export default function Footer({ data }) {
       className="bg-[black] text-[var(--text)] py-16 border-t border-white/10 relative z-10"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-6">
               <div className="p-1.5 bg-[var(--primary)] rounded-md">
@@ -28,12 +57,14 @@ export default function Footer({ data }) {
               prioridade.
             </p>
             <div className="flex gap-4">
-              {["IG", "LI", "FB"].map((social) => (
+              {socialIcons.map((social, index) => (
                 <div
-                  key={social}
+                  key={index}
                   className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-[var(--primary)] hover:text-black hover:border-[var(--primary)] transition-all cursor-pointer"
                 >
-                  <span className="font-bold text-xs">{social}</span>
+                  <a href={social.link} target="_blank">
+                    <span className="font-bold text-xs">{social.icon}</span>
+                  </a>
                 </div>
               ))}
             </div>
@@ -57,28 +88,6 @@ export default function Footer({ data }) {
                   </li>
                 )
               )}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[var(--third)] font-bold mb-6 uppercase text-xs tracking-[0.2em]">
-              Legal
-            </h4>
-            <ul className="space-y-3 text-sm">
-              {[
-                "Política de Privacidade",
-                "Termos de Uso",
-                "Código de Ética OAB",
-              ].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="hover:text-[var(--primary)] transition-colors"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
             </ul>
           </div>
         </div>

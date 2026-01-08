@@ -1,5 +1,5 @@
 import { Scale, Shield, Gavel, Users, ArrowRight } from "lucide-react";
-export default function Areas({ data }) {
+export default function Areas({ data, wppLink }) {
   const practiceAreas = [
     {
       title: "Direito Civil",
@@ -69,7 +69,8 @@ export default function Areas({ data }) {
                   {area.desc}
                 </p>
                 <a
-                  href="#"
+                  href={wppLink}
+                  target="_blank"
                   className="group inline-flex items-center text-xs font-bold text-[var(--primary)] uppercase tracking-wider hover:text-white transition-colors"
                 >
                   Saiba mais{" "}

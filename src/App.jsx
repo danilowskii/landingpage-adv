@@ -7,6 +7,7 @@ import Faqs from "./components/Faqs";
 import Contact from "./components/Contact";
 import Loc from "./components/Loc";
 import Footer from "./components/Footer";
+import { FaWhatsapp } from "react-icons/fa";
 
 const LawFirmWebsite = () => {
   const data = {
@@ -21,7 +22,14 @@ const LawFirmWebsite = () => {
     },
     firmName: "Magalhães & Associados",
     contact: "81999999999",
+    instagram: "seuperfil",
+    linkedin: "seuperfil",
+    facebook: "seuperfil",
+    message: "Olá, vim do site e gostaria de mais informações.",
   };
+
+  const messageWhastapp = encodeURIComponent(data.message);
+  const whatsappLink = `https://wa.me/55${data.contact}?text=${messageWhastapp}`;
 
   return (
     <div
@@ -39,15 +47,22 @@ const LawFirmWebsite = () => {
         <div className="absolute bottom-[10%] right-[-5%] w-[600px] h-[600px] bg-amber-800/10 rounded-full blur-[100px] opacity-30"></div>
         <div className="absolute top-[40%] left-[20%] w-[300px] h-[300px] bg-slate-800/40 rounded-full blur-[80px]"></div>
       </div>
-      <Nav data={data} />
-      <Hero data={data} />
-      <Metrics data={data} />
-      <Areas data={data} />
-      <About data={data} />
-      <Faqs data={data} />
-      <Contact data={data} />
-      <Loc data={data} />
-      <Footer data={data} />
+      <a href={whatsappLink} target="_blank">
+        <div className="fixed bottom-16 right-16 z-50 flex items-center justify-center">
+          <FaWhatsapp className="z-10 absolute w-12 h-12 text-green-500 mx-auto" />
+          <div className="z-0 absolute bg-green-400 rounded-full w-10 h-10 animate-ping"></div>
+        </div>
+      </a>
+
+      <Nav data={data} wppLink={whatsappLink} />
+      <Hero data={data} wppLink={whatsappLink} />
+      <Metrics data={data} wppLink={whatsappLink} />
+      <Areas data={data} wppLink={whatsappLink} />
+      <About data={data} wppLink={whatsappLink} />
+      <Faqs data={data} wppLink={whatsappLink} />
+      <Contact data={data} wppLink={whatsappLink} />
+      <Loc data={data} wppLink={whatsappLink} />
+      <Footer data={data} wppLink={whatsappLink} />
     </div>
   );
 };

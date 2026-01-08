@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Scale, Menu, X, ChevronRight } from "lucide-react";
 
-export default function Nav({ data }) {
+export default function Nav({ data, wppLink }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -54,7 +54,8 @@ export default function Nav({ data }) {
 
           <div className="hidden md:flex">
             <a
-              href="#contato"
+              href={wppLink}
+              target="_blank"
               className={`relative overflow-hidden group bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] text-[var(--bg)] px-8 py-3 rounded-sm text-sm font-bold shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300`}
             >
               <span className="relative z-10 flex items-center gap-2">
