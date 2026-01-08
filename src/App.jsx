@@ -48,7 +48,7 @@ const LawFirmWebsite = () => {
         <div className="absolute bottom-[10%] right-[-5%] w-[600px] h-[600px] bg-amber-800/10 rounded-full blur-[100px] opacity-30"></div>
         <div className="absolute top-[40%] left-[20%] w-[300px] h-[300px] bg-slate-800/40 rounded-full blur-[80px]"></div>
       </div>
-      <Appear className={`fixed bottom-16 right-16 z-50`}>
+      <Appear className={`fixed bottom-12 right-12 z-50`}>
         <a className="" href={whatsappLink} target="_blank">
           <div className="flex items-center justify-center">
             <FaWhatsapp className="z-10 absolute w-12 h-12 text-green-500" />
